@@ -107,7 +107,7 @@ Run `./generate-table.py` to generate the table you see above.
 [stars-askama]: <https://img.shields.io/github/stars/askama-rs/askama?label=&color=f8f8f8&style=flat-square>
 [stars-handlebars]: <https://img.shields.io/github/stars/sunng87/handlebars-rust?label=&color=f8f8f8&style=flat-square>
 [stars-horrorshow]: <https://img.shields.io/github/stars/Stebalien/horrorshow-rs?label=&color=f8f8f8&style=flat-square>
-[stars-hypertext]: <https://github.com/vidhanio/hypertext>
+[stars-hypertext]: <https://img.shields.io/github/stars/vidhanio/hypertext?label=&color=f8f8f8&style=flat-square>
 [stars-markup]: <https://img.shields.io/github/stars/utkarshkukreti/markup.rs?label=&color=f8f8f8&style=flat-square>
 [stars-maud]: <https://img.shields.io/github/stars/lambda-fairy/maud?label=&color=f8f8f8&style=flat-square>
 [stars-minijinja]: <https://img.shields.io/github/stars/mitsuhiko/minijinja?label=&color=f8f8f8&style=flat-square>
