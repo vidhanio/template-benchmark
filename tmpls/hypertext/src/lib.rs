@@ -20,7 +20,7 @@ impl tmpls::Benchmark for Benchmark {
                 @for row in &input.table {
                     tr {
                         @for col in row {
-                            td { (*col) }
+                            td { (col) }
                         }
                     }
                 }
@@ -42,7 +42,7 @@ impl tmpls::Benchmark for Benchmark {
                     ul {
                         @for (idx, team) in input.teams.iter().enumerate() {
                             li.champion[idx == 0] {
-                                b { (team.name.as_str()) } ": " (team.score)
+                                b { (team.name) } ": " (team.score)
                             }
                         }
                     }
