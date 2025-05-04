@@ -15,7 +15,7 @@ impl tmpls::Benchmark for Benchmark {
         output: &mut Self::Output,
         input: &BigTable,
     ) -> Result<(), Self::Error> {
-        *output = maud! {
+        maud! {
             table {
                 @for row in &input.table {
                     tr {
@@ -26,13 +26,12 @@ impl tmpls::Benchmark for Benchmark {
                 }
             }
         }
-        .render()
-        .0;
+        .render_to(output);
         Ok(())
     }
 
     fn teams(&mut self, output: &mut Self::Output, input: &Teams) -> Result<(), Self::Error> {
-        *output = maud! {
+        maud! {
             html {
                 head {
                     title { (input.year) }
@@ -49,8 +48,7 @@ impl tmpls::Benchmark for Benchmark {
                 }
             }
         }
-        .render()
-        .0;
+        .render_to(output);
         Ok(())
     }
 }
