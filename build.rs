@@ -1,8 +1,11 @@
+#![allow(clippy::uninlined_format_args)] // I don't care
+
 use std::ffi::{OsStr, OsString};
 use std::process::{Command, Stdio};
 
 fn main() -> Result<(), Error> {
-    println!("cargo:rerun-if-changed=Cargo.lock");
+    println!("cargo::rerun-if-changed=build.rs");
+    println!("cargo::rerun-if-changed=Cargo.lock");
 
     let cargo = var_os("CARGO")?;
     let root = var_os("CARGO_MANIFEST_DIR")?;
@@ -55,6 +58,7 @@ fn cargo_tree(cargo: &OsStr, root: &OsStr, package: &str) -> Result<CargoTreeOut
             "--depth=1",
             "--charset=ascii",
             "--all-features",
+            "--color=never",
             "--package",
             package,
         ])
@@ -69,6 +73,7 @@ fn cargo_tree(cargo: &OsStr, root: &OsStr, package: &str) -> Result<CargoTreeOut
     if !output.status.success() {
         return Err(Error::Status(output.status));
     }
+    let _ = dbg!((cargo, root, package, std::str::from_utf8(&output.stdout)));
 
     Ok(CargoTreeOutput::new(
         String::from_utf8(output.stdout).map_err(|_| Error::Utf8)?,

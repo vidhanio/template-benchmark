@@ -55,8 +55,6 @@ jobs:
         with:
           toolchain: stable
 
-      - uses: Swatinem/rust-cache@v2
-
       - name: Compile project
         run: cargo build --bench template-benchmark --release
 
@@ -73,8 +71,6 @@ jobs:
         with:
           toolchain: stable
           components: clippy
-
-      - uses: Swatinem/rust-cache@v2
 
       - name: clippy
         run: cargo clippy -- -D warnings
@@ -131,8 +127,6 @@ jobs:
         uses: dtolnay/rust-toolchain@master
         with:
           toolchain: stable
-
-      - uses: Swatinem/rust-cache@v2
 
       - name: Remove any stale results
         run: rm -rf target/criterion

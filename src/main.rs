@@ -125,7 +125,7 @@ fn tmpl<B: Benchmark>(case: Case) -> Result<(), Error> {
     result.map_err(|err| Error::Execution(Box::new(err)))?;
 
     let bytes = from_utf8(output.as_bytes()).map_err(Error::Utf8)?;
-    println!("{}", bytes);
+    println!("{bytes}");
 
     Ok(())
 }
