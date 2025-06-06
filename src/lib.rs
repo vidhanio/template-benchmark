@@ -66,7 +66,7 @@ macro_rules! for_each {
         };
         #[cfg(feature = "_contains_ssr")]
         let _ = {
-            const NAME: &str = concat!(stringify!($func), " (interpreted)");
+            const NAME: &str = concat!(stringify!($func), " (ssr)");
 
             let mut group = $c.benchmark_group(NAME);
 
