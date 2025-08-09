@@ -1,6 +1,7 @@
 use std::convert::Infallible;
 
-use hypertext::{GlobalAttributes, Renderable, html_elements, maud};
+use hypertext::Buffer;
+use hypertext::prelude::*;
 use tmpls::{BigTable, Teams};
 
 #[derive(Debug, Default)]
@@ -26,7 +27,7 @@ impl tmpls::Benchmark for Benchmark {
                 }
             }
         }
-        .render_to(output);
+        .render_to(Buffer::dangerously_from_string_mut(output));
         Ok(())
     }
 
@@ -48,7 +49,7 @@ impl tmpls::Benchmark for Benchmark {
                 }
             }
         }
-        .render_to(output);
+        .render_to(Buffer::dangerously_from_string_mut(output));
         Ok(())
     }
 }
